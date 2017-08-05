@@ -16,6 +16,7 @@ Running the script again will wipe and reset the cluster.
      * All nodes must be running Ubuntu 16.04
      * All nodes must have a public IP
      * All nodes must be accessible via SSH without a password (i.e. keys set up correctly)
+  6. kubectl (latest version) on your ${PATH}
 
 ## Instructions
 
