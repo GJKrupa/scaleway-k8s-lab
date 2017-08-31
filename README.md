@@ -2,7 +2,7 @@
 
 This project installs a Kubernetes cluster using kubadm and Helm that includes an Ingress and Letsencrypt certificates but not much else.
 
-This cluster is not production ready and is intended for cloud labs.  It includes only a single master/API server and any number of worker nodes.
+This cluster is not production ready and is intended for cloud labs.  It includes only a single master/API server and any number of worker nodes as well as persistent storage using Rook and Ceph.
 
 Running the script again will wipe and reset the cluster.
 
@@ -16,6 +16,7 @@ Running the script again will wipe and reset the cluster.
      * All nodes must be running Ubuntu 16.04
      * All nodes must have a public IP
      * All nodes must be accessible via SSH without a password (i.e. keys set up correctly)
+     * All additional node volumes (/dev/vbd onwards) must be unused and unattached.  They _WILL_ be wiped.
   6. kubectl (latest version) on your ${PATH}
 
 ## Instructions
