@@ -1,8 +1,8 @@
 # Scaleway Kubernetes Cluster Configuration
 
-This project installs a Kubernetes cluster using kubadm and Helm that includes an Ingress and Letsencrypt certificates but not much else.
+This project installs a Kubernetes cluster using kubadm and Helm that includes an Ingress and Letsencrypt certificates as well as persistent storage using Rook and Ceph on any available non-root volumes.
 
-This cluster is not production ready and is intended for cloud labs.  It includes only a single master/API server and any number of worker nodes as well as persistent storage using Rook and Ceph.
+This cluster is not production ready and is intended for cloud labs.  It includes only a single master/API server and any number of worker nodes.
 
 Running the script again will wipe and reset the cluster.
 
@@ -16,7 +16,7 @@ Running the script again will wipe and reset the cluster.
      * All nodes must be running Ubuntu 16.04
      * All nodes must have a public IP
      * All nodes must be accessible via SSH without a password (i.e. keys set up correctly)
-     * All additional node volumes (/dev/vdb onwards) must be unused and unattached.  They _WILL_ be wiped.
+     * All additional node volumes (/dev/vdb onwards) that are not mouned _WILL_ be wiped and used for Ceph.
   6. kubectl (latest version) on your ${PATH}
 
 ## Instructions
