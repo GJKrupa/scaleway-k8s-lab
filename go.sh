@@ -59,3 +59,8 @@ sleep 5
 kubectl --kubeconfig=admin.conf create -f ingress-user.yaml
 ssh root@${MASTER_PUBLIC_IP} "helm install --name lego --set config.LEGO_EMAIL=letsencrypt@${DOMAIN},config.LEGO_URL=https://acme-v01.api.letsencrypt.org/directory stable/kube-lego --namespace=kube-system"
 ssh root@${MASTER_PUBLIC_IP} "helm install stable/nginx-ingress --name ingress --set controller.hostNetwork=true --namespace=kube-system"
+
+kubectl --kubeconfig=admin.conf create -f rook-operator.yaml
+kubectl --kubeconfig=admin.conf create -f rook-cluster.yaml
+kubectl --kubeconfig=admin.conf create -f rook-storageclass.yaml
+kubectl --kubeconfig=admin.conf create -f rook-tools.yaml

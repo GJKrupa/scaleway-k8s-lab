@@ -11,5 +11,6 @@ deb http://apt.kubernetes.io/ kubernetes-xenial main
 EOF
 apt-get update
 apt-get install -y docker.io kubelet kubeadm
+apt-get install -y ceph-common
 
 apt-mark hold docker.io kubeadm kubectl kubelet kubernetes-cni
